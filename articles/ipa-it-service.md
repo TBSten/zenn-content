@@ -3,7 +3,7 @@ title: "ITサービスマネージャ受験記 (※合格記ではない)"
 emoji: "😊"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["IPA", "国家試験"]
-published: false
+publish_at: 2023-5-2 15:00:00
 ---
 
 # 😊ITサービスマネージャ試験とは？
