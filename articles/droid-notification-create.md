@@ -7,7 +7,7 @@ published: true
 published_at: 2022-05-08 08:10
 ---
 
-権限の要求周りの話は[こちら](https://zenn.dev/tbsten/droid-notification-permission)
+権限の要求周りの話は[こちら](https://zenn.dev/tbsten/articles/droid-notification-permission)
 
 ---
 

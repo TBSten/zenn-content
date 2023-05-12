@@ -30,7 +30,7 @@ AndroidManifestに以下を追加します。
 </manifest>
 ```
 
-## 1.2. 実行時の権限を要求する
+## 1.2. 実行時の権限を要求する (自分で実装する)
 
 Android13以降では **AndroidManifest** とは別に **実行時の権限** が必要になります。(以下参照)
 
@@ -94,6 +94,46 @@ requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
 
 :::
 
+## 1.2. 実行時の権限を要求する (Accompanist Permissions)
+
+上で大変な思いをして実装した実行時の権限。
+↓↓↓のライブラリを使うと超便利にできちゃいます😳😳😳
+
+https://google.github.io/accompanist/permissions/
+
+```kotlin:公式ドキュメントより
+val notificationPermissionState = rememberPermissionState(
+    android.Manifest.permission.POST_NOTIFICATIONS
+)
+
+if (notificationPermissionState.status.isGranted) {
+    Text("Camera permission Granted")
+} else {
+    Column {
+        val textToShow = if (notificationPermissionState.status.shouldShowRationale) {
+            "The camera is important for this app. Please grant the permission."
+        } else {
+            "Camera permission required for this feature to be available. " +
+                "Please grant the permission"
+        }
+        Text(textToShow)
+        Button(onClick = { notificationPermissionState.launchPermissionRequest() }) {
+            Text("Request permission")
+        }
+    }
+}
+
+```
+
+`rememberPermissionState` で取得できる`PermissionStateのstatus.isGranted`や`status.shouldShowRationale`で現在の状況を取得したり、`launchPermissionRequest()`で簡単に権限のリクエストができちゃいます......
+
+~~努力を返して?~~
+
+
+:::message alert
+ただし2023年5月12日現在、`ExperimentalPermissionsApi`なので注意が必要です。
+:::
+
 ---
 
-通知の表示は[こちら](https://zenn.dev/tbsten/droid-notification-create)
+通知の表示は[こちら](https://zenn.dev/tbsten/articles/droid-notification-create)
