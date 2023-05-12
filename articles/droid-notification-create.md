@@ -1,5 +1,5 @@
 ---
-title: "【Androidで通知を出すために】"
+title: "【Androidで通知を出すために】通知を作成する"
 emoji: "📣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["android"]
@@ -48,9 +48,9 @@ var builder = NotificationCompat.Builder(context, channelId)
 
 注意:[通知グループ](https://developer.android.com/guide/topics/ui/notifiers/notifications?hl=ja#bundle)とは別物です。
 
-|Chrome|Twitter|
-|---|---|
-|![](/images/droid-notification/1.png)|![](/images/droid-notification/2.png)|
+| Chrome                                | Twitter                               |
+| ------------------------------------- | ------------------------------------- |
+| ![](/images/droid-notification/1.png) | ![](/images/droid-notification/2.png) |
 
 このように通知をチャンネルでジャンル分けすることでユーザがジャンルごとに通知をON/OFFすることができるようになっています。
 
