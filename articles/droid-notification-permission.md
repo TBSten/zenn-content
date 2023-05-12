@@ -96,4 +96,4 @@ requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
 
 ---
 
-通知の表示は[こちら](https://zenn.dev/tbsten/droid-notification-create)
+通知の表示は[こちら](https://zenn.dev/tbsten/articles/droid-notification-create)
